@@ -20,6 +20,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thinkpad.png" translatesAutoresizingMaskIntoConstraints="NO" id="NwN-WI-5mJ">
                                 <rect key="frame" x="84" y="192" width="328" height="290"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sparkfun.png" translatesAutoresizingMaskIntoConstraints="NO" id="gxs-hC-tOu">
+                                <rect key="frame" x="663" y="222" width="328" height="290"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTD-t1-3vC">
                                 <rect key="frame" x="84" y="192" width="328" height="290"/>
                                 <connections>
@@ -27,21 +30,9 @@
                                     <segue destination="P2F-4o-80u" kind="show" id="nHi-BB-4WT"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U0B-JM-u5T">
-                                <rect key="frame" x="0.0" y="1322" width="1024" height="44"/>
-                                <items>
-                                    <navigationItem title="CEID Equipment Sign-Out App" id="cWd-d0-Ihs">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="fastForward" id="PCF-dp-J8r">
-                                            <connections>
-                                                <segue destination="XAV-9u-UPD" kind="show" id="t6r-tp-Qa0"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lenovo ThinkPad Laptop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ze-uO-IZl">
-                                <rect key="frame" x="20" y="190" width="189" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="190" width="204" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,17 +48,56 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SB-bh-cWy">
+                                <rect key="frame" x="663" y="222" width="328" height="290"/>
+                                <connections>
+                                    <action selector="selectEquip1:" destination="ohz-1E-Dir" eventType="touchUpInside" id="oGb-Zf-ZdJ"/>
+                                    <action selector="selectEquip2:" destination="ohz-1E-Dir" eventType="touchUpInside" id="i33-Kw-LEZ"/>
+                                    <segue destination="P2F-4o-80u" kind="show" id="ZOi-VD-240"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SparkFun Kit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl3-RA-xLb">
+                                <rect key="frame" x="599" y="191" width="204" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quV-jv-SWv">
+                                <rect key="frame" x="894" y="193" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9R-oj-F1m">
+                                <rect key="frame" x="806" y="191" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U0B-JM-u5T">
+                                <rect key="frame" x="0.0" y="34" width="1024" height="44"/>
+                                <items>
+                                    <navigationItem title="CEID Equipment Sign-Out App" id="cWd-d0-Ihs">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="fastForward" id="PCF-dp-J8r">
+                                            <connections>
+                                                <segue destination="XAV-9u-UPD" kind="show" id="t6r-tp-Qa0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPadPro"/>
                     <connections>
                         <outlet property="remaining1" destination="Qq4-mx-qcg" id="1HY-Du-FrA"/>
+                        <outlet property="remaining2" destination="quV-jv-SWv" id="G5y-dK-DbM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pe5-i5-Mab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="-1647"/>
+            <point key="canvasLocation" x="-26" y="-1763"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="Qgf-Az-ccZ">
@@ -94,11 +124,14 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CEID Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0on-95-mzP">
                                 <rect key="frame" x="235" y="377" width="554" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-XU-kzo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="password" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-XU-kzo">
                                 <rect key="frame" x="624" y="422" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="submit:" destination="P2F-4o-80u" eventType="touchUpInside" id="4Vm-xb-32X"/>
                                     <segue destination="XAV-9u-UPD" kind="show" id="GcW-jv-b1C"/>
@@ -130,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scF-mh-J3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="-1669"/>
+            <point key="canvasLocation" x="1085" y="-1647"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="0B0-1N-Dml">
@@ -226,9 +259,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="sparkfun.png" width="600" height="600"/>
         <image name="thinkpad.png" width="1280" height="960"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="nHi-BB-4WT"/>
         <segue reference="csj-G6-qzz"/>
         <segue reference="GcW-jv-b1C"/>
     </inferredMetricsTieBreakers>

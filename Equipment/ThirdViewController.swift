@@ -17,27 +17,77 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     
     @IBAction func submit(sender: AnyObject) {
-        nameList.append(nameInput.text!)
-        nameInput.text = ""
-        dateList.append(getCurrentTime())
-        equipmentList.append(equipment)
-        print(nameList)
-        print(equipmentList)
-        print(dateList)
-        //equipmentInput.text = ""
-        NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
-        NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
-        NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
-        if thinkpad > 0 {
-        thinkpad--
+        if password.text == "CEID" {
+            nameList.append(nameInput.text!)
+            nameInput.text = ""
+            dateList.append(getCurrentTime())
+            equipmentList.append(equipment)
+            print(nameList)
+            print(equipmentList)
+            print(dateList)
+            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
+            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
+            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+        
+            if (equipmentInput.text == "ThinkPad Laptop" && thinkpad.count > 0) {
+                thinkpad.removeAtIndex(0)
+            }
+            else if (equipmentInput.text == "SparkFun Kit" && sparkFun.count > 0) {
+                sparkFun.removeAtIndex(0)
+            }
+            else {
+            }
+            equipment = ""
         }
         else {
-        thinkpad = 0
+            nameList.append("nil")
+            nameInput.text = ""
+            dateList.append("nil")
+            equipmentList.append("nil")
+            print(nameList)
+            print(equipmentList)
+            print(dateList)
+            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
+            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
+            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
         }
     }
     
+//    override func shouldPerformSegueWithIdentifier(password: String, sender: AnyObject!) -> Bool {
+//        if password == "CEID" {
+//            nameList.append(nameInput.text!)
+//            nameInput.text = ""
+//            dateList.append(getCurrentTime())
+//            equipmentList.append(equipment)
+//            print(nameList)
+//            print(equipmentList)
+//            print(dateList)
+//            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
+//            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
+//            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+//            if thinkpad > 0 {
+//                thinkpad--
+//            }
+//            else {
+//                thinkpad = 0
+//            }
+//            
+//            if sparkFun > 0 {
+//                sparkFun--
+//            }
+//            else {
+//                sparkFun = 0
+//            }
+//            
+//            return true
+//        }
+//        else {
+//            return false
+//        }
+//    }
+    
+    
     func getCurrentTime() -> String {
-        
         let date = NSDate()
         let formatter = NSDateFormatter()
         formatter.dateStyle = .ShortStyle
@@ -49,8 +99,10 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.nameInput.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         equipmentInput.text = equipment
-        //self.equipmentInput.delegate = self
     }
     
     override func didReceiveMemoryWarning() {

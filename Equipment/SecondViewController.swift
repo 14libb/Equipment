@@ -62,20 +62,24 @@ class SecondViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.Delete {
+            if equipmentList[indexPath.row] == "ThinkPad Laptop" {
+                thinkpad.append("ThinkPad Laptop")
+            }
+            else if equipmentList[indexPath.row] == "SparkFun Kit" {
+                sparkFun.append("SparkFun Kit")
+            }
             
             nameList.removeAtIndex(indexPath.row)
             equipmentList.removeAtIndex(indexPath.row)
             dateList.removeAtIndex(indexPath.row)
             
             NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
-                NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
-                NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
+            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
             
             nameListTable.reloadData()
             dateListTable.reloadData()
             equipmentListTable.reloadData()
-            thinkpad++
-            
         }
     }
     
