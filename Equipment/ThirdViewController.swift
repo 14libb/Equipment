@@ -18,39 +18,38 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func submit(sender: AnyObject) {
         if password.text == "CEID" {
-            nameList.append(nameInput.text!)
-            nameInput.text = ""
-            dateList.append(getCurrentTime())
-            equipmentList.append(equipment)
-            print(nameList)
-            print(equipmentList)
-            print(dateList)
-            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
-            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
-            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
-        
-            if (equipmentInput.text == "ThinkPad Laptop" && thinkpad.count > 0) {
-                thinkpad.removeAtIndex(0)
-            }
-            else if (equipmentInput.text == "SparkFun Kit" && sparkFun.count > 0) {
-                sparkFun.removeAtIndex(0)
-            }
-            else {
-            }
-            equipment = ""
+             self.performSegueWithIdentifier("passwordSegue", sender: self)
+                nameList.append(nameInput.text!)
+                nameInput.text = ""
+                dateList.append(getCurrentTime())
+                equipmentList.append(equipment)
+                print(nameList)
+                print(equipmentList)
+                print(dateList)
+                NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
+                NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
+                NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+                
+                if (equipmentInput.text == "ThinkPad Laptop" && thinkpad.count > 0) {
+                    thinkpad.removeAtIndex(0)
+                }
+                else if (equipmentInput.text == "SparkFun Kit" && sparkFun.count > 0) {
+                    sparkFun.removeAtIndex(0)
+                }
+                else {
+                }
+                equipment = ""
         }
-        else {
-            print(nameList)
-            print(equipmentList)
-            print(dateList)
-            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
-            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
-            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+        else{
+            
         }
     }
     
-//    override func shouldPerformSegueWithIdentifier(password: String, sender: AnyObject!) -> Bool {
-//        if password == "CEID" {
+    
+    
+//    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if "passwordSegue" == segue.identifier {
 //            nameList.append(nameInput.text!)
 //            nameInput.text = ""
 //            dateList.append(getCurrentTime())
@@ -61,27 +60,59 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
 //            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
 //            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
 //            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
-//            if thinkpad > 0 {
-//                thinkpad--
-//            }
-//            else {
-//                thinkpad = 0
-//            }
-//            
-//            if sparkFun > 0 {
-//                sparkFun--
-//            }
-//            else {
-//                sparkFun = 0
-//            }
-//            
-//            return true
-//        }
-//        else {
-//            return false
+//
+//                if (equipmentInput.text == "ThinkPad Laptop" && thinkpad.count > 0) {
+//                thinkpad.removeAtIndex(0)
+//                }
+//                else if (equipmentInput.text == "SparkFun Kit" && sparkFun.count > 0) {
+//                sparkFun.removeAtIndex(0)
+//                }
+//                else {
+//                }
+//            equipment = ""
+//
 //        }
 //    }
     
+//     func prepareForSegue(identifier: String!, sender: AnyObject?) {
+//        if (identifier == "passwordSegue" && password.text == "CEID") {
+////            return false
+////        }
+////        else {
+////            if password.text == "CEID" {
+//            nameList.append(nameInput.text!)
+//            nameInput.text = ""
+//            dateList.append(getCurrentTime())
+//            equipmentList.append(equipment)
+//            print(nameList)
+//            print(equipmentList)
+//            print(dateList)
+//            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
+//            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
+//            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+//            
+//                if (equipmentInput.text == "ThinkPad Laptop" && thinkpad.count > 0) {
+//                thinkpad.removeAtIndex(0)
+//                }
+//                else if (equipmentInput.text == "SparkFun Kit" && sparkFun.count > 0) {
+//                sparkFun.removeAtIndex(0)
+//                }
+//                else {
+//                }
+//            equipment = ""
+//            return true
+//            }
+//                
+//            else {
+//            print(nameList)
+//            print(equipmentList)
+//            print(dateList)
+//            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
+//            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
+//            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+//            return false
+//            }
+//        }
     
     func getCurrentTime() -> String {
         let date = NSDate()

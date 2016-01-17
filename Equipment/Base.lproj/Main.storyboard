@@ -126,12 +126,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="password" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-XU-kzo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-XU-kzo">
                                 <rect key="frame" x="624" y="422" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
-                                    <action selector="submit:" destination="P2F-4o-80u" eventType="touchUpInside" id="4Vm-xb-32X"/>
-                                    <segue destination="XAV-9u-UPD" kind="show" id="GcW-jv-b1C"/>
+                                    <action selector="submit:" destination="P2F-4o-80u" eventType="touchUpInside" id="cuG-d5-UEz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3e-55-pTq">
@@ -156,6 +155,7 @@
                         <outlet property="nameInput" destination="mWc-hB-851" id="dyt-j5-xu6"/>
                         <outlet property="netidInput" destination="iiq-42-ftC" id="Rwd-yM-b3X"/>
                         <outlet property="password" destination="0on-95-mzP" id="AE6-Zz-5zX"/>
+                        <segue destination="XAV-9u-UPD" kind="show" identifier="passwordSegue" id="6fc-8X-uGz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scF-mh-J3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -260,8 +260,8 @@
         <image name="thinkpad.png" width="1280" height="960"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nHi-BB-4WT"/>
         <segue reference="csj-G6-qzz"/>
-        <segue reference="GcW-jv-b1C"/>
+        <segue reference="ZOi-VD-240"/>
+        <segue reference="6fc-8X-uGz"/>
     </inferredMetricsTieBreakers>
 </document>
