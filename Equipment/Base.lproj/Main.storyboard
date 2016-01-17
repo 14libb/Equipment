@@ -111,47 +111,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWc-hB-851">
-                                <rect key="frame" x="235" y="285" width="554" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="NetID" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iiq-42-ftC">
-                                <rect key="frame" x="235" y="331" width="554" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CEID Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0on-95-mzP">
-                                <rect key="frame" x="235" y="377" width="554" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-XU-kzo">
-                                <rect key="frame" x="624" y="422" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submit:" destination="P2F-4o-80u" eventType="touchUpInside" id="cuG-d5-UEz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3e-55-pTq">
-                                <rect key="frame" x="351" y="422" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="ohz-1E-Dir" kind="show" id="csj-G6-qzz"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Equipment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmR-Ch-Cru" propertyAccessControl="all">
                                 <rect key="frame" x="235" y="256" width="554" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mDM-07-WYc">
+                                <rect key="frame" x="381" y="291" width="262" height="69"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="P2F-4o-80u" id="Ek0-oH-V5P"/>
+                                    <outlet property="delegate" destination="P2F-4o-80u" id="SlX-FX-JsH"/>
+                                </connections>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWc-hB-851">
+                                <rect key="frame" x="235" y="386" width="554" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="NetID" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iiq-42-ftC">
+                                <rect key="frame" x="235" y="432" width="554" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CEID Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0on-95-mzP">
+                                <rect key="frame" x="235" y="478" width="554" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-XU-kzo">
+                                <rect key="frame" x="624" y="523" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="P2F-4o-80u" eventType="touchUpInside" id="cuG-d5-UEz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3e-55-pTq">
+                                <rect key="frame" x="351" y="523" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="ohz-1E-Dir" kind="show" id="csj-G6-qzz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPadPro"/>
                     <connections>
                         <outlet property="equipmentInput" destination="NmR-Ch-Cru" id="vta-o5-H6z"/>
+                        <outlet property="idNumber" destination="mDM-07-WYc" id="6fV-bq-KEM"/>
                         <outlet property="nameInput" destination="mWc-hB-851" id="dyt-j5-xu6"/>
                         <outlet property="netidInput" destination="iiq-42-ftC" id="Rwd-yM-b3X"/>
                         <outlet property="password" destination="0on-95-mzP" id="AE6-Zz-5zX"/>
@@ -205,14 +213,14 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nlr-pQ-W2E">
-                                <rect key="frame" x="535" y="33" width="323" height="1289"/>
+                                <rect key="frame" x="535" y="33" width="239" height="1289"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GtY-Xs-FpO">
-                                        <rect key="frame" x="0.0" y="28" width="323" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="239" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtY-Xs-FpO" id="PLf-4a-BDE">
-                                            <rect key="frame" x="0.0" y="0.0" width="323" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="239" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -240,12 +248,31 @@
                                     <outlet property="delegate" destination="XAV-9u-UPD" id="oBd-aB-kyF"/>
                                 </connections>
                             </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-k5-hyh" userLabel="Equipid List Table">
+                                <rect key="frame" x="782" y="33" width="76" height="1289"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="k8d-bg-DPO">
+                                        <rect key="frame" x="0.0" y="28" width="76" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k8d-bg-DPO" id="cLZ-hG-FIV">
+                                            <rect key="frame" x="0.0" y="0.0" width="76" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XAV-9u-UPD" id="oVy-az-1oZ"/>
+                                    <outlet property="delegate" destination="XAV-9u-UPD" id="Nvk-Wf-2aT"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPadPro"/>
                     <connections>
                         <outlet property="dateListTable" destination="f7S-cD-Xpx" id="wtT-IX-ZBN"/>
+                        <outlet property="equipidListTable" destination="UfX-k5-hyh" id="YYz-4j-Gum"/>
                         <outlet property="equipmentListTable" destination="nlr-pQ-W2E" id="s1y-rs-Vvq"/>
                         <outlet property="nameListTable" destination="bQl-qg-fCg" id="Vhs-cv-fvt"/>
                     </connections>
@@ -260,8 +287,8 @@
         <image name="thinkpad.png" width="1280" height="960"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="csj-G6-qzz"/>
-        <segue reference="ZOi-VD-240"/>
+        <segue reference="0Oj-a5-fPV"/>
         <segue reference="6fc-8X-uGz"/>
+        <segue reference="ZOi-VD-240"/>
     </inferredMetricsTieBreakers>
 </document>

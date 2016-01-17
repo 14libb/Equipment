@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//Next problem: Figure out how to distinguish ID numbers of inventory
+//Next problem: Figure out how to make sure an item isn't checked out twice/add an option to edit the equipment value after submitted
 var thinkpad = ["ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop"]
 var sparkFun = ["SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit"]
 var equipment = ""

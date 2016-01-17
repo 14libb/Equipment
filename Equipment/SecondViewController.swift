@@ -11,7 +11,8 @@ import UIKit
 var nameList = [String]()
 var equipmentList = [String]()
 var dateList = [String]()
-
+var equipidList = [String]()
+var equipid = ""
 class SecondViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class SecondViewController: UIViewController, UITableViewDelegate {
             nameList = NSUserDefaults.standardUserDefaults().objectForKey("nameList") as! [String]
             equipmentList = NSUserDefaults.standardUserDefaults().objectForKey("equipmentList") as! [String]
             dateList = NSUserDefaults.standardUserDefaults().objectForKey("dateList") as! [String]
+            equipidList = NSUserDefaults.standardUserDefaults().objectForKey("equipidList") as! [String]
         }
     }
     
@@ -35,7 +37,7 @@ class SecondViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var nameListTable: UITableView!
     @IBOutlet weak var equipmentListTable: UITableView!
     @IBOutlet weak var dateListTable: UITableView!
-
+    @IBOutlet weak var equipidListTable: UITableView!
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -51,6 +53,10 @@ class SecondViewController: UIViewController, UITableViewDelegate {
         }
         else if (tableView == equipmentListTable){
             cell.textLabel?.text = equipmentList[indexPath.row]
+            return cell
+        }
+        else if (tableView == equipidListTable){
+            cell.textLabel?.text = equipidList[indexPath.row]
             return cell
         }
         else {
@@ -78,14 +84,17 @@ class SecondViewController: UIViewController, UITableViewDelegate {
                 nameList.removeAtIndex(indexPath.row)
                 equipmentList.removeAtIndex(indexPath.row)
                 dateList.removeAtIndex(indexPath.row)
+                equipidList.removeAtIndex(indexPath.row)
                 
                 NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
                 NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
                 NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+                NSUserDefaults.standardUserDefaults().setObject(equipidList, forKey: "equipidList")
                 
                 nameListTable.reloadData()
                 dateListTable.reloadData()
                 equipmentListTable.reloadData()
+                equipidListTable.reloadData()
             }
         }
     
@@ -93,6 +102,7 @@ class SecondViewController: UIViewController, UITableViewDelegate {
         nameListTable.reloadData()
         dateListTable.reloadData()
         equipmentListTable.reloadData()
+        equipidListTable.reloadData()
     }
 }
 
