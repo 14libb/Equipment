@@ -9,6 +9,9 @@
 import UIKit
 
 var pickerData: [String] = [String]()
+var thinkPadData = ["Equipment #","1", "2", "3", "4"]
+var sparkFunData = ["Equipment #","1", "2", "3", "4", "5", "6"]
+
 class ThirdViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var equipmentInput: UILabel!
@@ -36,9 +39,12 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
             
                 if (equipmentInput.text == "ThinkPad Laptop" && thinkpad.count > 0) {
                     thinkpad.removeAtIndex(0)
+                    thinkPadData = thinkPadData.filter({$0 != equipid})
+                    print(thinkPadData)
                 }
                 else if (equipmentInput.text == "SparkFun Kit" && sparkFun.count > 0) {
                     sparkFun.removeAtIndex(0)
+                    sparkFunData = sparkFunData.filter({$0 != equipid})
                 }
                 else {
                 }
@@ -61,7 +67,6 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.nameInput.delegate = self
-        pickerData = ["Equipment #","1", "2", "3", "4", "5", "6"]
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -80,6 +85,12 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     
     // The number of rows of data
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if equipment == "ThinkPad Laptop" {
+            pickerData = thinkPadData
+        }
+        else if equipment == "SparkFun Kit" {
+            pickerData = sparkFunData
+        }
         return pickerData.count
     }
     
@@ -91,7 +102,7 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     // Capture the picker view selection
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row != 0 {
-        equipid = "\(row)"
+            equipid = pickerData[row]
         }
     }
     

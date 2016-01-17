@@ -76,9 +76,15 @@ class SecondViewController: UIViewController, UITableViewDelegate {
             if editingStyle == UITableViewCellEditingStyle.Delete{
                 if equipmentList[indexPath.row] == "ThinkPad Laptop" {
                     thinkpad.append("ThinkPad Laptop")
+                    thinkPadData.append(equipidList[indexPath.row])
+                    thinkPadData.sortInPlace({
+                        (a: String, b: String) -> Bool in Int(a) < Int(b)})
+                    print(thinkPadData)
                 }
                 else if equipmentList[indexPath.row] == "SparkFun Kit" {
                     sparkFun.append("SparkFun Kit")
+                    sparkFunData.append(equipidList[indexPath.row])
+                    sparkFunData.sortInPlace({(a: String, b: String) -> Bool in Int(a) < Int(b)})
                 }
                 
                 nameList.removeAtIndex(indexPath.row)

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//Next problem: Figure out how to make sure an item isn't checked out twice/add an option to edit the equipment value after submitted
+//Next problem: Add an option to edit the equipment value after submitted/History of all sign-outs
 var thinkpad = ["ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop"]
 var sparkFun = ["SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit"]
 var equipment = ""
