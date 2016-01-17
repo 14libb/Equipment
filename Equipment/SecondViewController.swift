@@ -8,6 +8,12 @@
 
 import UIKit
 
+var nameHistory = [String]()
+var netidHistory = [String]()
+var equipmentHistory = [String]()
+var dateHistory = [String]()
+var equipidHistory = [String]()
+
 var nameList = [String]()
 var equipmentList = [String]()
 var dateList = [String]()
@@ -79,7 +85,7 @@ class SecondViewController: UIViewController, UITableViewDelegate {
                     thinkPadData.append(equipidList[indexPath.row])
                     thinkPadData.sortInPlace({
                         (a: String, b: String) -> Bool in Int(a) < Int(b)})
-                    print(thinkPadData)
+                    //print(thinkPadData)
                 }
                 else if equipmentList[indexPath.row] == "SparkFun Kit" {
                     sparkFun.append("SparkFun Kit")

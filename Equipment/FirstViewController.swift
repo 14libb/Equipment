@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//Next problem: Add an option to edit the equipment value after submitted/History of all sign-outs
+//Next problem: Add an option to edit the equipment value after submitted
 var thinkpad = ["ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop"]
 var sparkFun = ["SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit"]
 var equipment = ""

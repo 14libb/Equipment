@@ -23,15 +23,23 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     @IBAction func submit(sender: AnyObject) {
         if ((password.text == "CEID") && (equipid != "")) {
              self.performSegueWithIdentifier("passwordSegue", sender: self)
+                nameHistory.append(nameInput.text!)
+                netidHistory.append(netidInput.text!)
+                equipmentHistory.append(equipment)
+                equipidHistory.append(equipid)
+                dateHistory.append(getCurrentTime())
+                let history = [[nameHistory],[netidHistory],[equipmentHistory],[equipidHistory],[dateHistory]]
+                print(history)
+            
                 nameList.append(nameInput.text!)
                 nameInput.text = ""
                 dateList.append(getCurrentTime())
                 equipmentList.append(equipment)
                 equipidList.append(equipid)
-                print(nameList)
-                print(equipmentList)
-                print(dateList)
-                print(equipidList)
+                //print(nameList)
+                //print(equipmentList)
+                //print(dateList)
+                //print(equipidList)
                 NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
                 NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
                 NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
@@ -40,7 +48,7 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
                 if (equipmentInput.text == "ThinkPad Laptop" && thinkpad.count > 0) {
                     thinkpad.removeAtIndex(0)
                     thinkPadData = thinkPadData.filter({$0 != equipid})
-                    print(thinkPadData)
+                    //print(thinkPadData)
                 }
                 else if (equipmentInput.text == "SparkFun Kit" && sparkFun.count > 0) {
                     sparkFun.removeAtIndex(0)
