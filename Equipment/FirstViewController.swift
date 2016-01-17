@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//Next problem: Figure out how to distinguish ID numbers of inventory
 var thinkpad = ["ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop"]
 var sparkFun = ["SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit"]
 var equipment = ""

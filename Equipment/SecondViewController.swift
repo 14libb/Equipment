@@ -60,7 +60,6 @@ class SecondViewController: UIViewController, UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        // Detemine if it's in editing mode
         if (tableView == dateListTable) {
             return .Delete
         }
