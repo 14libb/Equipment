@@ -129,9 +129,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="password" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-XU-kzo">
                                 <rect key="frame" x="624" y="422" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="submit:" destination="P2F-4o-80u" eventType="touchUpInside" id="4Vm-xb-32X"/>
                                     <segue destination="XAV-9u-UPD" kind="show" id="GcW-jv-b1C"/>

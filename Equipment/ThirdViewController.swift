@@ -40,10 +40,6 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
             equipment = ""
         }
         else {
-            nameList.append("nil")
-            nameInput.text = ""
-            dateList.append("nil")
-            equipmentList.append("nil")
             print(nameList)
             print(equipmentList)
             print(dateList)
