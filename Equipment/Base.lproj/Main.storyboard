@@ -116,6 +116,13 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjM-xt-M6p">
+                                <rect key="frame" x="439" y="1146" width="147" height="30"/>
+                                <state key="normal" title="Use QR Code Instead"/>
+                                <connections>
+                                    <segue destination="Whb-WX-JmJ" kind="show" id="8he-fr-SEX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -249,7 +256,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scF-mh-J3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="-1689"/>
+            <point key="canvasLocation" x="1197" y="-1415"/>
+        </scene>
+        <!--QR Code-->
+        <scene sceneID="uM7-5s-Hgl">
+            <objects>
+                <viewController title="QR Code" id="Whb-WX-JmJ" customClass="ScannerViewController" customModule="Equipment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WtP-Db-VRH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mh5-0w-9gB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m0T-oc-EnD">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Bhq-BM-DnT" appends="YES" id="Q7V-37-zy7"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPadPro"/>
+                    <connections>
+                        <segue destination="P2F-4o-80u" kind="show" identifier="QRSegue" id="UGT-GT-ja5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tst-th-xKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="Bhq-BM-DnT">
+                    <connections>
+                        <segue destination="ohz-1E-Dir" kind="show" id="kxs-FS-ZY3"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-14" y="-151"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="0B0-1N-Dml">
@@ -391,7 +429,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-78" y="-29"/>
+            <point key="canvasLocation" x="1220" y="-273"/>
         </scene>
     </scenes>
     <resources>
@@ -400,8 +438,8 @@
         <image name="thinkpad.png" width="1280" height="960"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6Jh-0P-jd9"/>
+        <segue reference="kxs-FS-ZY3"/>
+        <segue reference="UGT-GT-ja5"/>
         <segue reference="Alh-eR-Trm"/>
-        <segue reference="gP4-if-ynl"/>
     </inferredMetricsTieBreakers>
 </document>

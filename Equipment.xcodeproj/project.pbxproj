@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C16D0561C4C485D00EF5B8B /* ceid.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C16D0551C4C485D00EF5B8B /* ceid.png */; };
 		5C16D0581C4C72FA00EF5B8B /* ceid 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C16D0571C4C72FA00EF5B8B /* ceid 2.png */; };
+		5C16D05A1C4C782500EF5B8B /* QR Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16D0591C4C782500EF5B8B /* QR Code.swift */; };
 		5CC52D811C49C2DB00A8055F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC52D801C49C2DB00A8055F /* AppDelegate.swift */; };
 		5CC52D831C49C2DB00A8055F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC52D821C49C2DB00A8055F /* FirstViewController.swift */; };
 		5CC52D851C49C2DB00A8055F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC52D841C49C2DB00A8055F /* SecondViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		5C16D0551C4C485D00EF5B8B /* ceid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceid.png; sourceTree = "<group>"; };
 		5C16D0571C4C72FA00EF5B8B /* ceid 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ceid 2.png"; sourceTree = "<group>"; };
+		5C16D0591C4C782500EF5B8B /* QR Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "QR Code.swift"; sourceTree = "<group>"; };
 		5CC52D7D1C49C2DB00A8055F /* Equipment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equipment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC52D801C49C2DB00A8055F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CC52D821C49C2DB00A8055F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				5CC52D821C49C2DB00A8055F /* FirstViewController.swift */,
 				5CC52D841C49C2DB00A8055F /* SecondViewController.swift */,
 				5CC52DBA1C49D31D00A8055F /* ThirdViewController.swift */,
+				5C16D0591C4C782500EF5B8B /* QR Code.swift */,
 				5CC52D861C49C2DB00A8055F /* Main.storyboard */,
 				5CC52D891C49C2DB00A8055F /* Assets.xcassets */,
 				5CC52D8B1C49C2DB00A8055F /* LaunchScreen.storyboard */,
@@ -214,6 +217,7 @@
 				TargetAttributes = {
 					5CC52D7C1C49C2DB00A8055F = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 7FW58G9PZX;
 					};
 					5CC52D921C49C2DB00A8055F = {
 						CreatedOnToolsVersion = 7.2;
@@ -284,6 +288,7 @@
 			files = (
 				5CC52D851C49C2DB00A8055F /* SecondViewController.swift in Sources */,
 				5CC52D811C49C2DB00A8055F /* AppDelegate.swift in Sources */,
+				5C16D05A1C4C782500EF5B8B /* QR Code.swift in Sources */,
 				5CC52DBB1C49D31D00A8055F /* ThirdViewController.swift in Sources */,
 				5CC52D831C49C2DB00A8055F /* FirstViewController.swift in Sources */,
 			);
@@ -427,10 +432,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Equipment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appfish.Equipment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfish.Equipment1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -438,10 +445,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Equipment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appfish.Equipment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appfish.Equipment1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

@@ -108,11 +108,13 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     
     //Confirm data cell pass in selection
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if row != 0 {
-            equipid = pickerData[row]
-        }
-        else {
-            equipid = ""
+        if success == false {
+            if row != 0 {
+                equipid = pickerData[row]
+            }
+            else {
+                equipid = ""
+            }
         }
     }
     
@@ -123,6 +125,8 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     
     func textfieldShouldReturn(textField:UITextField!) -> Bool{
         nameInput.resignFirstResponder()
+        netidInput.resignFirstResponder()
+        password.resignFirstResponder()
         return true
     }
 }
