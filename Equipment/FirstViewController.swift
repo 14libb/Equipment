@@ -7,16 +7,18 @@
 //
 
 import UIKit
-//Next problem: Add an option to edit the equipment value after submitted
-var thinkpad = ["ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop","ThinkPad Laptop"]
-var sparkFun = ["SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit","SparkFun Kit"]
+//Optional problem: Add an option to edit the equipment value after submitted?
+
 var equipment = ""
 class FirstViewController: UIViewController,UITextFieldDelegate {
 
+    //Labels for how many are left
     
-    @IBOutlet weak var remaining1: UILabel!
-    @IBOutlet weak var remaining2: UILabel!
-
+    @IBOutlet weak var remaining1: UILabel! //ThinkPad
+    @IBOutlet weak var remaining2: UILabel! //SparkFun
+    
+    //Buttons to select which equipment to checkout
+    
     @IBAction func selectEquip1(sender: AnyObject) {
         print(equipmentList)
         equipment = "ThinkPad Laptop"
@@ -25,13 +27,13 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
         print(equipmentList)
         equipment = "SparkFun Kit"
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       remaining1.text = "\(thinkpad.count)"
-       remaining2.text = "\(sparkFun.count)"
+       remaining1.text = "\(thinkPadData.count - 1)"
+       remaining2.text = "\(sparkFunData.count - 1)"
     }
 
     override func didReceiveMemoryWarning() {

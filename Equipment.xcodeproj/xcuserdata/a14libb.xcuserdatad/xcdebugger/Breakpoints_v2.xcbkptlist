@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equipment/FirstViewController.swift"
-            timestampString = "474672063.997359"
+            timestampString = "474770823.074358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "selectEquip1(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equipment/SecondViewController.swift"
-            timestampString = "474759213.586028"
+            timestampString = "474770823.074358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "tableView(_:commitEditingStyle:forRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,13 +42,106 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Equipment/ThirdViewController.swift"
-            timestampString = "474759213.586028"
+            timestampString = "474770823.074358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "submit(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Equipment/FirstViewController.swift"
+            timestampString = "474770823.074358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "FirstViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Equipment.FirstViewController.remaining1.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "Equipment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a14libb/Documents/iOSCourse/Equipment/Equipment/FirstViewController.swift"
+                  timestampString = "474769559.721495"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Equipment.FirstViewController.remaining1.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "Equipment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a14libb/Documents/iOSCourse/Equipment/Equipment/FirstViewController.swift"
+                  timestampString = "474769559.721843"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Equipment.FirstViewController.remaining1.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "Equipment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a14libb/Documents/iOSCourse/Equipment/Equipment/FirstViewController.swift"
+                  timestampString = "474769559.722041"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Equipment.FirstViewController.init (Equipment.FirstViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Equipment.FirstViewController"
+                  moduleName = "Equipment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a14libb/Documents/iOSCourse/Equipment/Equipment/FirstViewController.swift"
+                  timestampString = "474769559.722217"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Equipment.FirstViewController.init (Equipment.FirstViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Equipment.FirstViewController&gt;"
+                  moduleName = "Equipment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a14libb/Documents/iOSCourse/Equipment/Equipment/FirstViewController.swift"
+                  timestampString = "474769559.722391"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

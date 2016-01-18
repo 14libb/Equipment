@@ -8,19 +8,23 @@
 
 import UIKit
 
+//2D History array
 var nameHistory = [String]()
 var netidHistory = [String]()
 var equipmentHistory = [String]()
 var dateHistory = [String]()
 var equipidHistory = [String]()
 
+//Current Inventory arrays
 var nameList = [String]()
 var equipmentList = [String]()
 var dateList = [String]()
 var equipidList = [String]()
 var equipid = ""
+
 class SecondViewController: UIViewController, UITableViewDelegate {
-    
+   
+    //Retreive data saved to device and load
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,13 +43,14 @@ class SecondViewController: UIViewController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-
+    //Text input fields for submit form
+    
     @IBOutlet weak var nameListTable: UITableView!
     @IBOutlet weak var equipmentListTable: UITableView!
     @IBOutlet weak var dateListTable: UITableView!
     @IBOutlet weak var equipidListTable: UITableView!
 
-    
+    //Table set up and input data into cells
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return nameList.count
     }
@@ -71,6 +76,7 @@ class SecondViewController: UIViewController, UITableViewDelegate {
         }
     }
 
+    //Only allow the delete option to appear for the date column
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         if (tableView == dateListTable) {
             return .Delete
@@ -78,17 +84,15 @@ class SecondViewController: UIViewController, UITableViewDelegate {
         return .None
     }
     
+    //When deleted, update inventory lists and reload data
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
             if editingStyle == UITableViewCellEditingStyle.Delete{
                 if equipmentList[indexPath.row] == "ThinkPad Laptop" {
-                    thinkpad.append("ThinkPad Laptop")
                     thinkPadData.append(equipidList[indexPath.row])
                     thinkPadData.sortInPlace({
                         (a: String, b: String) -> Bool in Int(a) < Int(b)})
-                    //print(thinkPadData)
                 }
                 else if equipmentList[indexPath.row] == "SparkFun Kit" {
-                    sparkFun.append("SparkFun Kit")
                     sparkFunData.append(equipidList[indexPath.row])
                     sparkFunData.sortInPlace({(a: String, b: String) -> Bool in Int(a) < Int(b)})
                 }
@@ -110,6 +114,7 @@ class SecondViewController: UIViewController, UITableViewDelegate {
             }
         }
     
+    //Load data
     override func viewDidAppear(animated: Bool) {
         nameListTable.reloadData()
         dateListTable.reloadData()
