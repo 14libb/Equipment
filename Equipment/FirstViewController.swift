@@ -13,18 +13,15 @@ var equipment = ""
 class FirstViewController: UIViewController,UITextFieldDelegate {
 
     //Labels for how many are left
-    
     @IBOutlet weak var remaining1: UILabel! //ThinkPad
     @IBOutlet weak var remaining2: UILabel! //SparkFun
     
     //Buttons to select which equipment to checkout
     
     @IBAction func selectEquip1(sender: AnyObject) {
-        print(equipmentList)
         equipment = "ThinkPad Laptop"
     }
     @IBAction func selectEquip2(sender: AnyObject) {
-        print(equipmentList)
         equipment = "SparkFun Kit"
     }
     

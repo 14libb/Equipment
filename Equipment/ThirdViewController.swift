@@ -12,6 +12,7 @@ import UIKit
 var pickerData: [String] = [String]()
 var thinkPadData = ["Equipment #","1", "2", "3", "4"]
 var sparkFunData = ["Equipment #","1", "2", "3", "4", "5", "6"]
+var qrData = [equipid]
 
 class ThirdViewController: UIViewController,UITextFieldDelegate {
     
@@ -25,39 +26,40 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     //Require password and available equipment # to submit, update lists, store
     @IBAction func submit(sender: AnyObject) {
         if ((password.text == "CEID") && (equipid != "")) {
-             self.performSegueWithIdentifier("passwordSegue", sender: self)
-                nameHistory.append(nameInput.text!)
-                netidHistory.append(netidInput.text!)
-                equipmentHistory.append(equipment)
-                equipidHistory.append(equipid)
-                dateHistory.append(getCurrentTime())
-                let history = [[nameHistory],[netidHistory],[equipmentHistory],[equipidHistory],[dateHistory]]
-                print(history)
+            self.performSegueWithIdentifier("passwordSegue", sender: self)
+            nameHistory.append(nameInput.text!)
+            netidHistory.append(netidInput.text!)
+            equipmentHistory.append(equipment)
+            equipidHistory.append(equipid)
+            dateHistory.append(getCurrentTime())
+            let history = [[nameHistory],[netidHistory],[equipmentHistory],[equipidHistory],[dateHistory]]
+            print(history)
             
-                nameList.append(nameInput.text!)
-                nameInput.text = ""
-                dateList.append(getCurrentTime())
-                equipmentList.append(equipment)
-                equipidList.append(equipid)
-
-                NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
-                NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
-                NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
-                NSUserDefaults.standardUserDefaults().setObject(equipidList, forKey: "equipidList")
+            nameList.append(nameInput.text!)
+            nameInput.text = ""
+            dateList.append(getCurrentTime())
+            equipmentList.append(equipment)
+            equipidList.append(equipid)
             
-                if (equipmentInput.text == "ThinkPad Laptop" && thinkPadData.count > 0) {
-                    thinkPadData = thinkPadData.filter({$0 != equipid})
-                }
-                else if (equipmentInput.text == "SparkFun Kit" && sparkFunData.count > 0) {
-                    sparkFunData = sparkFunData.filter({$0 != equipid})
-                }
-                else {
-                }
-                equipment = ""
+            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
+            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
+            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+            NSUserDefaults.standardUserDefaults().setObject(equipidList, forKey: "equipidList")
+            
+            if (equipmentInput.text == "ThinkPad Laptop" && thinkPadData.count > 0) {
+                thinkPadData = thinkPadData.filter({$0 != equipid})
+            }
+            else if (equipmentInput.text == "SparkFun Kit" && sparkFunData.count > 0) {
+                sparkFunData = sparkFunData.filter({$0 != equipid})
+            }
+            else {
+            }
+            equipment = ""
         }
         else {
             
         }
+        success = false
     }
     
     //Get date month/day/year
@@ -77,6 +79,7 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         equipmentInput.text = equipment
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,11 +95,14 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     
     //# rows of data
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if equipment == "ThinkPad Laptop" {
+        if ((equipment == "ThinkPad Laptop") && (success == false)) {
             pickerData = thinkPadData
         }
-        else if equipment == "SparkFun Kit" {
+        else if ((equipment == "SparkFun Kit") && (success == false)) {
             pickerData = sparkFunData
+        }
+        else {
+            pickerData = qrData
         }
         return pickerData.count
     }
@@ -108,13 +114,16 @@ class ThirdViewController: UIViewController,UITextFieldDelegate {
     
     //Confirm data cell pass in selection
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if success == false {
+        if (success == false) {
             if row != 0 {
                 equipid = pickerData[row]
             }
             else {
                 equipid = ""
             }
+        }
+        else {
+            equipid = pickerData[row]
         }
     }
     

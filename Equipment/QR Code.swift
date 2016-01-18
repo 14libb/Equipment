@@ -1,16 +1,15 @@
 //
 //  QR Code.swift
 //  Equipment
-//
-//  Created by Betsy Li on 1/17/16.
-//  Copyright © 2016 Appfish. All rights reserved.
+//  Code Template/Project from: http://www.appcoda.com/qr-code-reader-swift/ via Simon Ng
+//  Modified by Betsy Li on 1/17/16.
+//  Copyright © 2016 Simon Ng. All rights reserved.
 //
 
 import AVFoundation
 import UIKit
 
 var success = false
-
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -89,19 +88,31 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             foundCode(readableObject.stringValue);
         }
+        if (success == true) {
+            self.performSegueWithIdentifier("QRSegue", sender: self)
+            //    dismissViewControllerAnimated(true, completion: nil)
+        }
         
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func foundCode(code: String) {
-        self.performSegueWithIdentifier("QRSegue", sender: self)
         if (code.rangeOfString("ThinkPad Laptop") != nil) || (code.rangeOfString("SparkFun Kit") != nil) {
-            equipid = code.substringWithRange(Range<String.Index>(start: code.startIndex.advancedBy(1), end: code.endIndex.advancedBy(0)))
-            equipment = code.substringWithRange(Range<String.Index>(start: code.startIndex.advancedBy(0), end: code.endIndex.advancedBy(-(code.characters.count - 1))))
-            success = true
+            equipment = code.substringWithRange(Range<String.Index>(start: code.startIndex.advancedBy(1), end: code.endIndex.advancedBy(0)))
+            equipid = code.substringWithRange(Range<String.Index>(start: code.startIndex.advancedBy(0), end: code.endIndex.advancedBy(-(code.characters.count - 1))))
+            if ((equipment == "ThinkPad Laptop") && (thinkPadData.contains(equipid))) {
+                success = true
+            }
+            else if ((equipment == "SparkFun Kit") && (sparkFunData.contains(equipid))) {
+                success = true
+            }
+            else {
+                self.performSegueWithIdentifier("errorSegue", sender: self)
+            }
         }
     }
-    
+    override func viewDidAppear(animated: Bool) {
+        
+    }
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -110,3 +121,4 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         return .Portrait
     }
 }
+

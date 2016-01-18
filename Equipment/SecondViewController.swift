@@ -57,7 +57,7 @@ class SecondViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
-        
+        cell.textLabel!.font = UIFont.systemFontOfSize(7.5)
         if (tableView == nameListTable) {
             cell.textLabel?.text = nameList[indexPath.row]
             return cell
@@ -75,7 +75,7 @@ class SecondViewController: UIViewController, UITableViewDelegate {
             return cell
         }
     }
-
+    
     //Only allow the delete option to appear for the date column
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         if (tableView == dateListTable) {
@@ -86,33 +86,33 @@ class SecondViewController: UIViewController, UITableViewDelegate {
     
     //When deleted, update inventory lists and reload data
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-            if editingStyle == UITableViewCellEditingStyle.Delete{
-                if equipmentList[indexPath.row] == "ThinkPad Laptop" {
-                    thinkPadData.append(equipidList[indexPath.row])
-                    thinkPadData.sortInPlace({
-                        (a: String, b: String) -> Bool in Int(a) < Int(b)})
-                }
-                else if equipmentList[indexPath.row] == "SparkFun Kit" {
-                    sparkFunData.append(equipidList[indexPath.row])
-                    sparkFunData.sortInPlace({(a: String, b: String) -> Bool in Int(a) < Int(b)})
-                }
-                
-                nameList.removeAtIndex(indexPath.row)
-                equipmentList.removeAtIndex(indexPath.row)
-                dateList.removeAtIndex(indexPath.row)
-                equipidList.removeAtIndex(indexPath.row)
-                
-                NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
-                NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
-                NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
-                NSUserDefaults.standardUserDefaults().setObject(equipidList, forKey: "equipidList")
-                
-                nameListTable.reloadData()
-                dateListTable.reloadData()
-                equipmentListTable.reloadData()
-                equipidListTable.reloadData()
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            if equipmentList[indexPath.row] == "ThinkPad Laptop" {
+                thinkPadData.append(equipidList[indexPath.row])
+                thinkPadData.sortInPlace({
+                    (a: String, b: String) -> Bool in Int(a) < Int(b)})
             }
+            else if equipmentList[indexPath.row] == "SparkFun Kit" {
+                sparkFunData.append(equipidList[indexPath.row])
+                sparkFunData.sortInPlace({(a: String, b: String) -> Bool in Int(a) < Int(b)})
+            }
+            
+            nameList.removeAtIndex(indexPath.row)
+            equipmentList.removeAtIndex(indexPath.row)
+            dateList.removeAtIndex(indexPath.row)
+            equipidList.removeAtIndex(indexPath.row)
+            
+            NSUserDefaults.standardUserDefaults().setObject(nameList, forKey: "nameList")
+            NSUserDefaults.standardUserDefaults().setObject(equipmentList, forKey: "equipmentList")
+            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
+            NSUserDefaults.standardUserDefaults().setObject(equipidList, forKey: "equipidList")
+            
+            nameListTable.reloadData()
+            dateListTable.reloadData()
+            equipmentListTable.reloadData()
+            equipidListTable.reloadData()
         }
+    }
     
     //Load data
     override func viewDidAppear(animated: Bool) {
@@ -122,4 +122,3 @@ class SecondViewController: UIViewController, UITableViewDelegate {
         equipidListTable.reloadData()
     }
 }
-
