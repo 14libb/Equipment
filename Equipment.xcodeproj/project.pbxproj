@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C16D0561C4C485D00EF5B8B /* ceid.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C16D0551C4C485D00EF5B8B /* ceid.png */; };
 		5CC52D811C49C2DB00A8055F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC52D801C49C2DB00A8055F /* AppDelegate.swift */; };
 		5CC52D831C49C2DB00A8055F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC52D821C49C2DB00A8055F /* FirstViewController.swift */; };
 		5CC52D851C49C2DB00A8055F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC52D841C49C2DB00A8055F /* SecondViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C16D0551C4C485D00EF5B8B /* ceid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceid.png; sourceTree = "<group>"; };
 		5CC52D7D1C49C2DB00A8055F /* Equipment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equipment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC52D801C49C2DB00A8055F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CC52D821C49C2DB00A8055F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				5CC52DB01C49CA1F00A8055F /* canon.png */,
 				5CC52DB11C49CA1F00A8055F /* sparkfun.png */,
 				5CC52DB21C49CA1F00A8055F /* thinkpad.png */,
+				5C16D0551C4C485D00EF5B8B /* ceid.png */,
 			);
 			path = Equipment;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				5CC52D8D1C49C2DB00A8055F /* LaunchScreen.storyboard in Resources */,
 				5CC52D8A1C49C2DB00A8055F /* Assets.xcassets in Resources */,
+				5C16D0561C4C485D00EF5B8B /* ceid.png in Resources */,
 				5CC52D881C49C2DB00A8055F /* Main.storyboard in Resources */,
 				5CC52DB31C49CA1F00A8055F /* canon.png in Resources */,
 				5CC52DB51C49CA1F00A8055F /* thinkpad.png in Resources */,
