@@ -14,6 +14,7 @@ var netidHistory = [String]()
 var equipmentHistory = [String]()
 var dateHistory = [String]()
 var equipidHistory = [String]()
+var returnHistory = [String]()
 
 //Current Inventory arrays
 var nameList = [String]()
@@ -35,6 +36,14 @@ class SecondViewController: UIViewController, UITableViewDelegate {
             equipmentList = NSUserDefaults.standardUserDefaults().objectForKey("equipmentList") as! [String]
             dateList = NSUserDefaults.standardUserDefaults().objectForKey("dateList") as! [String]
             equipidList = NSUserDefaults.standardUserDefaults().objectForKey("equipidList") as! [String]
+        }
+        for index in equipmentList {
+            if (index == "ThinkPad Laptop") {
+                thinkPadData = thinkPadData.filter({$0 != (equipidList[equipmentList.indexOf(index)!])})
+            }
+            if (index == "SparkFun Kit") {
+                sparkFunData = sparkFunData.filter({$0 != (equipidList[equipmentList.indexOf(index)!])})
+            }
         }
     }
     
@@ -91,10 +100,12 @@ class SecondViewController: UIViewController, UITableViewDelegate {
                 thinkPadData.append(equipidList[indexPath.row])
                 thinkPadData.sortInPlace({
                     (a: String, b: String) -> Bool in Int(a) < Int(b)})
+                returnHistory.insert(getCurrentTime(), atIndex:indexPath.row)
             }
             else if equipmentList[indexPath.row] == "SparkFun Kit" {
                 sparkFunData.append(equipidList[indexPath.row])
                 sparkFunData.sortInPlace({(a: String, b: String) -> Bool in Int(a) < Int(b)})
+                returnHistory.insert(getCurrentTime(), atIndex:indexPath.row)
             }
             
             nameList.removeAtIndex(indexPath.row)
@@ -112,6 +123,15 @@ class SecondViewController: UIViewController, UITableViewDelegate {
             equipmentListTable.reloadData()
             equipidListTable.reloadData()
         }
+    }
+    
+    //Get date month/day/year
+    func getCurrentTime() -> String {
+        let date = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .ShortStyle
+        let stringValue = formatter.stringFromDate(date)
+        return stringValue
     }
     
     //Load data

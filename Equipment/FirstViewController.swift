@@ -26,11 +26,37 @@ class FirstViewController: UIViewController,UITextFieldDelegate {
     }
     
     
+    override func viewWillAppear(animated: Bool) {
+        for index in equipmentList {
+            if (index == "ThinkPad Laptop") {
+                thinkPadData = thinkPadData.filter({$0 != (equipidList[equipmentList.indexOf(index)!])})
+            }
+            if (index == "SparkFun Kit") {
+                sparkFunData = sparkFunData.filter({$0 != (equipidList[equipmentList.indexOf(index)!])})
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       remaining1.text = "\(thinkPadData.count - 1)"
-       remaining2.text = "\(sparkFunData.count - 1)"
+        if NSUserDefaults.standardUserDefaults().objectForKey("nameList") != nil {
+            
+            nameList = NSUserDefaults.standardUserDefaults().objectForKey("nameList") as! [String]
+            equipmentList = NSUserDefaults.standardUserDefaults().objectForKey("equipmentList") as! [String]
+            dateList = NSUserDefaults.standardUserDefaults().objectForKey("dateList") as! [String]
+            equipidList = NSUserDefaults.standardUserDefaults().objectForKey("equipidList") as! [String]
+        }
+        for index in equipmentList {
+            if (index == "ThinkPad Laptop") {
+                thinkPadData = thinkPadData.filter({$0 != (equipidList[equipmentList.indexOf(index)!])})
+            }
+            if (index == "SparkFun Kit") {
+                sparkFunData = sparkFunData.filter({$0 != (equipidList[equipmentList.indexOf(index)!])})
+            }
+        }
+        remaining1.text = "\(thinkPadData.count - 1)"
+        remaining2.text = "\(sparkFunData.count - 1)"
+        
     }
 
     override func didReceiveMemoryWarning() {
